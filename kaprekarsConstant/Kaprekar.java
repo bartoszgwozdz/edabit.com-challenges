@@ -15,7 +15,7 @@ import java.util.Arrays;
 
 
 public class Kaprekar  {
-    private static int kaprekarCount =0;
+    private static int kaprekarCount;
 
 
     public static void main(String[] args) {
@@ -23,7 +23,8 @@ public class Kaprekar  {
     }
 
     public static int kaprekar(int number){
-            kaprekarForm(number);
+            kaprekarCount = 0;
+	    kaprekarForm(number);
             return kaprekarCount;
     }
 
@@ -34,7 +35,7 @@ public class Kaprekar  {
         int [] descending = sortDescend(fourDigit);
         number = subtract(ascending, descending);
         if(number!=6174){
-            number = kaprekar(number);
+            number = kaprekarForm(number);
         }
         return number;
     }
